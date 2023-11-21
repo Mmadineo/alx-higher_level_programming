@@ -1,26 +1,28 @@
 #!/usr/bin/python3
 
-
 """Module that lists all states from mySQL database"""
 
 import sys
 import MySQLdb
 
-def list_states (username, password, database):
 
-    """lists all states from the database hbtn_0e_0_usa.
-    Ags:
-        username: mysql username
-        password: mysql password
-        database: mysql database
+def list_states(username, password, database):
+    """Lists all states from the database hbtn_0e_0_usa.
+
+    Args:
+        username (str): MySQL username
+        password (str): MySQL password
+        database (str): MySQL database
     """
 
     # Connect to the MySQL server
-    db = MySQLdb.connect (host='localhost',\
-            port=3306,\
-            user=username,\
-            passwd=password,\
-            db=database)
+    db = MySQLdb.connect(
+        host='localhost',
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database
+    )
     cursor = db.cursor()
 
     # Execute the SQL query to fetch all states
